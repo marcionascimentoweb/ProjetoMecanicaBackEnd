@@ -1,0 +1,47 @@
+﻿//Banco em Mongodb
+// criar o banco
+use clienteMecanica
+
+--------------------------------------------------------------------
+Banco clienteMecanica
+collections --> cliente e faleConosco
+
+---------------------------------------------------------------------
+
+//Coleção
+//idCliente
+//nome
+//cpf
+//dataNascimento
+//sexo
+
+--------------------------------------------------------------------
+
+//Inserir dados
+
+db.cliente.insert({"idCliente":"001", "nome":"Marcio Luiz", "cpf":"11111111111", "dataNascimento":"10102000","sexo":"M"})
+
+db.cliente.insert({"idCliente":"002", "nome":"Tatiana Rosa", "cpf":"22222222222", "dataNascimento":"07101977","sexo":"F"})
+
+db.cliente.insert({"idCliente":"003", "nome":"Daiane Oliveira", "cpf":"33333333333", "dataNascimento":"19111992","sexo":"F"})
+
+-------------------------------------------------------------------------------------------
+
+//remover collection
+db.faleConosco.remove({"nome":"Marcio Luiz"});
+
+db.clienteMecanica.remove({"idCliente":"002", "nome":"Tatiana Rosa", "cpf":"22222222222", "dataNascimento":"07101977","sexo":"F"})
+
+------------------------------------------------------------------------------------------
+
+//Listar
+db.clienteMecanica.find()
+//ou
+db.clienteMecanica.find().pretty()
+//ou
+db.clienteMecanica.find({"nome":"Marcio Luiz"}).pretty()
+
+------------------------------------------------------------------------------------------------
+
+//Integra Mongo com Node
+npm install mongodb --save
